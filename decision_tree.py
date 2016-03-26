@@ -1,10 +1,11 @@
-from sklearn.datasets import load_iris
+import read_file as rf
 from sklearn import tree
-from sklearn.metrics import accuracy_score
-iris = load_iris()
+from sklearn.cross_validation import cross_val_score
+
+data, targets = rf.read_abalone()
 clf = tree.DecisionTreeClassifier(criterion='entropy')
-clf = clf.fit(iris.data, iris.target)
-print("Iris accuracy: " + str(clf.score(iris.data, iris.target)) + "%")
+scores = cross_val_score(clf, data, targets)
+print(scores.mean() * 100)
 
 
 

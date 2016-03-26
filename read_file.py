@@ -1,7 +1,5 @@
 import numpy as np
 
-
-
 def read_lungs():
 	filename = "lung-cancer.data"
 	the_file = open(filename, "r")
@@ -81,14 +79,3 @@ def read_letters():
 
 	return data, targets
 
-
-
-
-
-def main():
-	data, targets = read_lungs()
-	print(data)
-	print(targets)
-
-
-main()
