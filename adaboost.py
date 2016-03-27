@@ -7,9 +7,22 @@ import read_file as rf
 
 def main():
 	data, targets = rf.read_letters()
-
 	clf = AdaBoostClassifier(n_estimators=100, learning_rate=.007)
 	scores = cross_val_score(clf, data, targets)
+	print("Adaboost_Letters", end="")
+	print(scores.mean() * 100)
+
+
+	data, targets = rf.read_abalone()
+	clf = BaggingClassifier(KNeighborsClassifier(), max_samples=0.5, max_features=0.5)
+	scores = cross_val_score(clf, data, targets)
+	print("Adaboost_Abalone: ", end="")
+	print(scores.mean() * 100)
+
+	data, targets = rf.read_lungs()
+	clf = BaggingClassifier(KNeighborsClassifier(), max_samples=0.5, max_features=0.5)
+	scores = cross_val_score(clf, data, targets)
+	print("Adadboost_Lungs: ", end="")
 	print(scores.mean() * 100)
 
 
