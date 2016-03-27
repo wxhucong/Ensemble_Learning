@@ -21,6 +21,4 @@ def main():
 	print("KNN_Lungs: ", end="")
 	print(scores.mean() * 100)
 
-	
-
 main()
