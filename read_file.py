@@ -78,7 +78,3 @@ def read_letters():
 		row += 1
 
 	return data, targets
-
-data, targets = read_lungs()
-print(data)
-print(targets)
