@@ -8,24 +8,24 @@ import numpy as np
 import read_file as rf
 
 def main():
-	data, targets = rf.read_letters()
 
+	data, targets = rf.read_letters()
 	clf = RandomForestClassifier(n_estimators=10, max_depth=None, min_samples_split=1, random_state=0)
 	scores = cross_val_score(clf, data, targets)
-	print("Forrest_Letters: ", end="")
+	print("Forest_Letters: ", end="")
 	print(scores.mean() * 100)
 
 	data, targets = rf.read_abalone()
 	clf = RandomForestClassifier(n_estimators=10, max_depth=None, min_samples_split=1, random_state=0)
 	scores = cross_val_score(clf, data, targets)
-	print("Forrest_Abalone: ", end="")
+	print("Forest_Abalone: ", end="")
 	print(scores.mean() * 100)
 
 """
 	data, targets = rf.read_lungs()
 	clf = RandomForestClassifier(n_estimators=10, max_depth=None, min_samples_split=1, random_state=0)
 	scores = cross_val_score(clf, data, targets)
-	print("Forrest_Lungs: ", end="")
+	print("Forest_Lungs: ", end="")
 	print(scores.mean() * 100)
 """
 
