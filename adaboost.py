@@ -9,18 +9,18 @@ def main():
 	data, targets = rf.read_letters()
 	clf = AdaBoostClassifier(n_estimators=100, learning_rate=.007)
 	scores = cross_val_score(clf, data, targets)
-	print("Adaboost_Letters", end="")
+	print("Adaboost_Letters: ", end="")
 	print(scores.mean() * 100)
 
 
 	data, targets = rf.read_abalone()
-	clf = AdaBoostClassifier(n_estimators=100, learning_rate=.007)
+	clf = AdaBoostClassifier(n_estimators=100, learning_rate=.12)
 	scores = cross_val_score(clf, data, targets)
 	print("Adaboost_Abalone: ", end="")
 	print(scores.mean() * 100)
 
 	data, targets = rf.read_lungs()
-	clf = AdaBoostClassifier(n_estimators=100, learning_rate=.007)
+	clf = AdaBoostClassifier(n_estimators=100, learning_rate=.1)
 	scores = cross_val_score(clf, data, targets)
 	print("Adadboost_Lungs: ", end="")
 	print(scores.mean() * 100)
